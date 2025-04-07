@@ -1,5 +1,6 @@
 ﻿using Duende.IdentityServer;
 using Duende.IdentityServer.Models;
+using IdentityModel;
 
 namespace IdentityServer;
 
@@ -10,6 +11,13 @@ public static class Config
         {
             new IdentityResources.OpenId(),
             new IdentityResources.Profile(),
+            new IdentityResource(){
+                Name="verification",
+                UserClaims={
+                    JwtClaimTypes.Email,
+                    JwtClaimTypes.EmailVerified,
+                },
+            },
         };
 
     public static IEnumerable<ApiScope> ApiScopes =>
@@ -38,6 +46,7 @@ public static class Config
                     AllowedScopes={
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
+                        "verification",
                     }
                 }
             };
