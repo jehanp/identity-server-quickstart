@@ -4,10 +4,13 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-	</PropertyGroup>
+	  <UserSecretsId>ce27b8d4-f1b0-4547-905c-e8fa16f519d1</UserSecretsId>
+  </PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Duende.IdentityServer" Version="7.0.4" />
+		<PackageReference Include="Google.Apis.Auth.AspNetCore3" Version="1.69.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.14" />
 
 		<PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
 	</ItemGroup>

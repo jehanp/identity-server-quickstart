@@ -1,4 +1,7 @@
+using Duende.IdentityServer;
 using Duende.IdentityServer.Test;
+using Google.Apis.Auth.AspNetCore3;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
 namespace IdentityServer;
@@ -19,6 +22,34 @@ internal static class HostingExtensions
             .AddInMemoryApiScopes(Config.ApiScopes)
             .AddInMemoryClients(Config.Clients)
             .AddTestUsers(TestUsers.Users);
+
+        builder.Services.AddAuthentication()
+        .AddGoogle("Google", options =>
+        {
+            options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+
+            options.ClientId = builder.Configuration["Authentication:Google:ClientId"] 
+                                ?? throw new InvalidOperationException("Google ClientId is not configured.");
+            options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] 
+                                    ?? throw new InvalidOperationException("Google ClientSecret is not configured.");
+        })
+        .AddOpenIdConnect("oidc", "Demo IdentityServer", options =>
+        {
+            options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+            options.SignOutScheme = IdentityServerConstants.SignoutScheme;
+            options.SaveTokens = true;
+
+            options.Authority = "https://demo.duendesoftware.com";
+            options.ClientId = "interactive.confidential";
+            options.ClientSecret = "secret";
+            options.ResponseType = "code";
+
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                NameClaimType = "name",
+                RoleClaimType = "role"
+            };
+        });
 
         return builder.Build();
     }
