@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "src\Client\Client
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "src\WebClient\WebClient.csproj", "{C5713748-9821-4C69-AE95-68081D9F5F51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerAspNetIdentity", "src\IdentityServerAspNetIdentity\IdentityServerAspNetIdentity.csproj", "{37E060EC-53A9-4102-A9CD-DE20FF3EE204}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,18 @@ Global
 		{C5713748-9821-4C69-AE95-68081D9F5F51}.Release|x64.Build.0 = Release|Any CPU
 		{C5713748-9821-4C69-AE95-68081D9F5F51}.Release|x86.ActiveCfg = Release|Any CPU
 		{C5713748-9821-4C69-AE95-68081D9F5F51}.Release|x86.Build.0 = Release|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Debug|x64.Build.0 = Debug|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Debug|x86.Build.0 = Debug|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Release|x64.ActiveCfg = Release|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Release|x64.Build.0 = Release|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Release|x86.ActiveCfg = Release|Any CPU
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +94,6 @@ Global
 		{7810C717-CE40-4CA1-B96C-53AAA533BE20} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{646EB0F0-1A53-4EAE-9D23-75C9941B706E} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{C5713748-9821-4C69-AE95-68081D9F5F51} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{37E060EC-53A9-4102-A9CD-DE20FF3EE204} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 EndGlobal
