@@ -27,9 +27,12 @@ builder.Services.AddAuthentication(options=>{
     options.Scope.Add("profile");
     options.Scope.Add("verification");
     options.Scope.Add("api1");
+    options.Scope.Add("color");
     options.Scope.Add("offline_access");
     options.ClaimActions.MapJsonKey("email_verified", "email_verified");
+
     options.GetClaimsFromUserInfoEndpoint=true;
+    options.ClaimActions.MapJsonKey("favorite_color", "favorite_color");
 
     options.MapInboundClaims=false; // Don't rename claim types
     options.SaveTokens=true;
